@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      #zombie_map {
-          width: 600px;
-          height: 400px;
-          background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw&callback=initMap">
-    </script>
-    <div id="zombie_map"></div>
-    <script>
-        var zombie_map;
-        function initMap() {
-    
-                zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
-                zoom: 10,
-                center: {lat: 52.206727, lng: 0.124450}
-            });
-        }
-    </script>
-  </body>
-</hmtl>
+    <head>
+            <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+            
+
+            <div id="googleMap" style="width: 85%;height:100vh;"></div>
+            
+            <script>
+            function myMap() {
+            var mapProp= {
+              center:new google.maps.LatLng(51.508742,-0.120850),
+              zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+            </script>
+            
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw&callback=myMap"></script>
+            
+            <div class="wrapper">
+                    <!-- Sidebar -->
+                    <nav id="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Zombie Map</h3>
+                        </div>
+                
+                        <ul class="list-unstyled-components">
+                            <p>Location 1</p>
+                            <p>Location 2</p>
+                            <p>Location 3</p>
+                            <p>Location 4</p>
+                            <p>Location 5</p>
+                           
+                            
+                        </ul>
+                    
+                    </nav>
+                
+                </div>
+    </body>
+</html>
