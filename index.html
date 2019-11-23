@@ -14,12 +14,15 @@
             
             <script>
             function myMap() {
+            var markerSelf = {lat: 54.7757437, lng: -1.5915808};  
             var mapProp= {
               center:new google.maps.LatLng(51.508742,-0.120850),
               zoom:5,
             };
-            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var map = new google.maps.Map(document.getElementById("googleMap"),{zoom:8,center:markerSelf});
+            var marker = new google.maps.Marker({position: markerSelf, map: map});
             }
+
             </script>
             
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw&callback=myMap"></script>
@@ -30,17 +33,23 @@
                         <div class="sidebar-header">
                             <h3>Zombie Map</h3>
                         </div>
-                
+                        <div>
                         <ul class="list-unstyled-components">
                             <p>Location 1</p>
                             <p>Location 2</p>
                             <p>Location 3</p>
                             <p>Location 4</p>
                             <p>Location 5</p>
-                           
+                            
                             
                         </ul>
-                    
+                        </div>
+                        <div class="specifications">
+                            <ul>
+                                <p>asdf</p>
+                            </ul>
+                            
+                        </div>
                     </nav>
                 
                 </div>
