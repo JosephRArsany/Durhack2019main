@@ -11,7 +11,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
-    min-width: height 100vh;
+
 
 }
 
@@ -45,16 +45,19 @@ a, a:hover, a:focus {
     padding-bottom: 2px;
     background: #6d7fcc;
     text-align: center;
+    color:red;
 }
 
 #sidebar ul.components {
     padding-top: 20px;
     border-bottom: 1px solid #47748b;
+    padding-left:0px;
+    
 }
 
 #sidebar ul p {
     color: #fff;
-    
+    padding-left:0px;
 }
 #sidebar ul p:hover {
     color: #7386D5;
@@ -62,14 +65,12 @@ a, a:hover, a:focus {
     text-align: center;
 }
 #sidebar ul li a {
-    padding: 10px;
+
     font-size: 1.1em;
     display: block;
     
 }
-#sidebar ul ul {
-    padding:10px;
-}
+
 #sidebar ul li a:hover {
     color: #7386D5;
     background: #fff;
@@ -79,8 +80,8 @@ a, a:hover, a:focus {
     color: #fff;
     background: #6d7fcc;
 }
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
+#specifications {
+    background:white;
+    color:white;
+    
 }
