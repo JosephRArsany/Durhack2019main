@@ -1,0 +1,25 @@
+import googlemaps
+from googleplaces import GooglePlaces
+from pytimeparse.timeparse import timeparse
+
+RADIUS = 10000
+API_KEY = 'AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw'
+
+gmaps = googlemaps.Client(key = API_KEY)
+gplaces = GooglePlaces(API_KEY)
+
+def WDistance(l1, l2):
+    l1tol2 = gmaps.directions(l1, l2, mode = "walking")
+    return l1tol2[0]['legs'][0]['duration']['text']
+
+
+currentlocation = gmaps.geolocate()
+
+search_results = gplaces.nearby_search(lat_lng = currentlocation['location'], radius = RADIUS)
+
+for p in search_results.places:
+    placename = p.name
+    distance = WDistance(currentlocation['location'], p.geo_location)
+    distime = timeparse(distance)
+    print(placename, ":", distance, ":" , distime)
+    
