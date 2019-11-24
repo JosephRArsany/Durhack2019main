@@ -9,7 +9,7 @@ typerank = ["meal_delivery",
 "grocery_or_supermarket",
 "supermarket"]
 
-def FoodScore(location, t = None):
+def FoodScore(location, t = None):#pass place id instead?
     from googleplaces import GooglePlaces
     import math
     gplaces = GooglePlaces("AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw")
@@ -35,4 +35,5 @@ def FoodScore(location, t = None):
             return 0
         mult = (1 + (rank/8))
 
-    return 100/(1 + math.pow(math.e, -(rscore * rank)))
+    return 1.25 * mult * rscore
+    
