@@ -13,21 +13,24 @@
             <div id="googleMap" style="width: 85%;height:100vh;"></div>
             
             <script>
+            var latitude =54.7757437;
+            var longitude=-1.5915808;
             function myMap() {
-            var markerSelf = {lat: 54.7757437, lng: -1.5915808};  
+            var markerSelf = {lat: latitude, lng: longitude};  
             var mapProp= {
               center:new google.maps.LatLng(51.508742,-0.120850),
               zoom:5,
             };
-            var map = new google.maps.Map(document.getElementById("googleMap"),{zoom:8,center:markerSelf});
+            var map = new google.maps.Map(document.getElementById("googleMap"),{zoom:15,center:markerSelf});
             var marker = new google.maps.Marker({position: markerSelf, map: map});
             }
 
             </script>
             
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw&callback=myMap"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1qIvuAxzchC8QWG2Y0nn_9LnYsshrApw&callback=myMap&maptype=roadmap"></script>
             
             <div class="wrapper">
+                   
                     <!-- Sidebar -->
                     <nav id="sidebar">
                         <div class="sidebar-header">
@@ -35,23 +38,103 @@
                         </div>
                         <div>
                         <ul class="list-unstyled-components">
-                            <p>Location 1</p>
-                            <p>Location 2</p>
-                            <p>Location 3</p>
-                            <p>Location 4</p>
-                            <p>Location 5</p>
+                            <p id="locationOne">Location:</p>
+                            <p id="josephineBosephine">Josephine Butler</p>
+                            <p id="psychDepart">Dep. of Psychology</p>
+                            <p id="botGarden">Botanical Gardens</p>
+                            <p id="stAidans">St. Aidans</p>
+                            <p id="palaCentre">Palatine Centre</p>
                             
                             
                         </ul>
                         </div>
                         <div class="specifications">
                             <ul>
-                                <p>asdf</p>
+                                <p>Food and Water</p>
+                                <p id="foodAndWater">NULL</p>
+                                <p>Distance</p>
+                                <p id="distance">NULL</p>
+                                <p>Elevation</p>
+                                <p id="elevation">NULL</p>
+                                <p>Pop. Density</p>
+                                <p id="popDensity">NULL</p>
+                                
                             </ul>
                             
                         </div>
                     </nav>
                 
                 </div>
+                <script>
+                        var item1="NULL";
+                        var item2="NULL";
+                        var item3="NULL";
+                        var item4="NULL";
+                       
+                        document.getElementById("josephineBosephine").onclick = joBoVal;
+                        function joBoVal(){
+                            item1 = "71";
+                            item2 = "1.91km";
+                            item3 = "97";
+                            item4 = "76";
+                            longitude = -1.5798;
+                            latitude = 54.7598;
+                            myMap();
+                            updateList();
+                        }
+                        
+                        document.getElementById("psychDepart").onclick = PsychVal;
+                        function PsychVal(){
+                            item1 = "34";
+                            item2 = "0.48km";
+                            item3 = "96";
+                            item4 = "53";
+                            latitude=54.765082;
+                            longitude=-1.571830;
+                            myMap();
+                            updateList();
+                        }
+                        document.getElementById("botGarden").onclick = gardenVal;
+                        function gardenVal(){
+                            item1 = "41";
+                            item2 = "0.80km";
+                            item3 = "90";
+                            item4 = "67";
+                            latitude=54.7624064;
+                            longitude=-1.5749724;
+                            myMap();
+                            updateList();
+                        }
+                        document.getElementById("stAidans").onclick = aidansVal;
+                        function aidansVal(){
+                            item1 = "69";
+                            item2 = "1.12km";
+                            item3 = "88";
+                            item4 = "63";
+                            latitude=54.764842;
+                            longitude=-1.5832385;
+                            myMap();
+                            updateList();
+                        }
+                        document.getElementById("palaCentre").onclick = centreVal;
+                        function centreVal(){
+                            item1 = "55";
+                            item2 = "0.32km";
+                            item3 = "63";
+                            item4 = "46";
+                            latitude=54.7685785;
+                            longitude=-1.5721071;
+                            myMap();
+                            updateList();
+                        }
+                        
+                        function updateList() {
+                            document.getElementById("foodAndWater").innerHTML = item1;
+                            document.getElementById("distance").innerHTML = item2;
+                            document.getElementById("elevation").innerHTML = item3;
+                            document.getElementById("popDensity").innerHTML = item4;
+                            document.getElementById("foodAndWater").style.color = black;
+                        
+                        }</script>
     </body>
 </html>
